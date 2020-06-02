@@ -1,0 +1,15 @@
+h1 Books
+
+a(href="/books/create") Create a new book
+
+form(action="/books/search" method="GET")
+  input(type="text" name="q")
+  button Search
+
+ul
+  each book in books
+    li
+      span= book.name
+      a(href="/books/" + book.id + "/view") View
+      a(href="/books/" + book.id + "/delete") Delete
+      a(href="/books/" + book.id + "/update") Update
